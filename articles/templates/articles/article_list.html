@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articles</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    {% comment %} <link rel="stylesheet" href="/static/styles.css"> {% endcomment %}
+    <link rel="stylesheet" href="{% static "styles.css" %}">
 </head>
 <body class="">
-    <h2 class="font-normal text-2xl leading-8 text-gray-800">Article List</h2>
+    <h2 class="font-normal text-2xl leading-8 text-white">Article List</h2>
 
     <div class="grid md:grid-cols-3 sm:grid-cols-2">
         {% for article in articles %}
