@@ -6,7 +6,29 @@
     <title>Articles</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Article list here</h1>
+<body class="">
+    <h2 class="font-normal text-2xl leading-8 text-gray-800">Article List</h2>
+
+    <div class="grid md:grid-cols-3 sm:grid-cols-2">
+        {% for article in articles %}
+        <div class="container mx-auto my-5">
+            <div class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-105 cursor-pointer">
+              <div class="h-20 bg-red-500 flex items-center justify-between">
+                <h1 class="text-white ml-4 border-2 py-2 px-4 rounded-full">{{article.id}}</h1>
+                {% comment %} <p class="mr-20 text-white text-lg">{{article.title}}</p> {% endcomment %}
+                <p class="mr-4 text-white font-thin text-lg"><a>{{article.title}}</a></p>
+              </div>
+        
+              <p class="py-6 text-lg tracking-wide ml-16">{{article.body}} </p>
+              <hr >
+              <div class="flex justify-between px-5 mb-2 text-sm text-gray-600">
+                <p>Last Update</p>
+                <p>{{article.date}}</p>
+              </div>
+            </div>
+          </div>
+
+        {% endfor %}
+    </div>
 </body>
 </html>
