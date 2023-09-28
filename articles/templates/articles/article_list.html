@@ -10,7 +10,7 @@
           <div class="h-20 bg-red-500 flex items-center justify-between">
             <h1 class="text-white ml-4 border-2 py-2 px-4 rounded-full">{{article.id}}</h1>
             {% comment %} <p class="mr-20 text-white text-lg">{{article.title}}</p> {% endcomment %}
-            <p class="mr-4 text-white font-thin text-lg"><a>{{article.title}}</a></p>
+            <p class="mr-4 text-white font-thin text-lg"><a href="{% url 'articles:detail' slug=article.slug%}">{{article.title}}</a></p>
           </div>
     
           <p class="py-6 text-lg tracking-wide ml-16">{{article.snippet}} </p>
