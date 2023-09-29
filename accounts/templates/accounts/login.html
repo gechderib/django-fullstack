@@ -1,0 +1,15 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+
+<div>
+
+    <form id="contact-me" method="POST" action="/accounts/login/" class="w-full mx-auto max-w-3xl  shadow p-8 text-white ">
+        {% csrf_token %}
+
+        {{form}}
+        <input class="bg-gray-950 px-5 py-2 rounded block" type="submit" value="login" />
+    </form>
+</div>
+
+{% endblock content %}
