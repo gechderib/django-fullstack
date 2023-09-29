@@ -8,6 +8,9 @@
         {% csrf_token %}
 
         {{form}}
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{request.GET.next}}"/>
+        {% endif %}
         <input class="bg-gray-950 px-5 py-2 rounded block" type="submit" value="login" />
     </form>
 </div>
