@@ -2,5 +2,9 @@
 {% load static %}
 {% block content %}
 <h2 class="font-normal text-2xl leading-8 text-white my-3 ml-5">Add Article</h2>
-
+<form action="{% url "articles:create" %}" method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Create" class=""/>
+</form>
 {% endblock content %}
